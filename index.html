@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velocity Bikes | Sales, Service, and Rentals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Velocity<span>Bikes</span></div>
+    <nav class="nav">
+      <a href="#hero">Home</a>
+      <a href="#bikes">Bikes</a>
+      <a href="#services">Services</a>
+      <a href="#rentals">Rentals</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button
+      class="btn primary scroll-cta detail-trigger"
+      data-target="#contact"
+      data-detail="Book a service, test ride, or rental. We confirm within 1 business hour (Tue–Sun, 10–7)."
+    >
+      Book Now
+    </button>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Since 2008 · Local & Independent</p>
+        <h1>Your one-stop bike shop for sales, service, and rentals.</h1>
+        <p class="lede">
+          Discover performance bikes, get fast turn-around maintenance, or book a weekend rental. Our technicians are certified and ride-tested.
+        </p>
+        <div class="hero__actions">
+          <button class="btn primary scroll-cta" data-target="#bikes">View Bikes</button>
+          <button class="btn ghost scroll-cta" data-target="#services">See Services</button>
+        </div>
+        <div class="hero__metrics">
+          <div><strong>4.9★</strong><span>Google rating</span></div>
+          <div><strong>48h</strong><span>avg service turn-around</span></div>
+          <div><strong>12</strong><span>rental-ready models</span></div>
+        </div>
+      </div>
+      <div class="hero__image">
+        <img src="image/bike1.jpg" alt="Modern road bike on display">
+      </div>
+    </section>
+
+    <section id="bikes" class="section">
+      <div class="section__head">
+        <p class="eyebrow">Bikes in stock</p>
+        <h2>Shop curated road, gravel, and e-bikes.</h2>
+        <p class="lede">Test rides are free. All bikes include a professional fit, lifetime basic tune-ups, and first-year checkups.</p>
+      </div>
+      <div class="filters">
+        <label>
+          Category
+          <select id="categoryFilter">
+            <option value="all">All</option>
+            <option value="road">Road</option>
+            <option value="gravel">Gravel</option>
+            <option value="mountain">Mountain</option>
+            <option value="e-bike">E-Bike</option>
+          </select>
+        </label>
+        <label>
+          Max price
+          <input id="priceFilter" type="range" min="1200" max="5200" value="5200" step="200">
+          <span id="priceValue">₱5,200</span>
+        </label>
+      </div>
+      <div id="bikeGrid" class="cards"></div>
+    </section>
+
+    <section id="services" class="section section--muted">
+      <div class="section__head">
+        <p class="eyebrow">Workshop</p>
+        <h2>Certified mechanics, transparent pricing.</h2>
+      </div>
+      <div class="grid-3">
+        <article class="card service">
+          <h3>Same-Day Tune</h3>
+          <p>Adjust brakes and shifting, true wheels, torque critical bolts, and lube drivetrain.</p>
+          <p class="price">₱89</p>
+        </article>
+        <article class="card service">
+          <h3>Overhaul</h3>
+          <p>Full teardown, ultrasonic drivetrain clean, repack bearings, replace cables and housing.</p>
+          <p class="price">₱219 + parts</p>
+        </article>
+        <article class="card service">
+          <h3>Custom Builds</h3>
+          <p>Frame-up builds, wheel lacing, and suspension setup with pro fit included.</p>
+          <p class="price">From ₱350</p>
+        </article>
+      </div>
+      <div class="callout">
+        <p>Need a quick fix? Flat repairs and safety checks are walk-in friendly.</p>
+        <button class="btn primary scroll-cta" data-target="#contact">Book service</button>
+      </div>
+    </section>
+
+    <section id="rentals" class="section">
+      <div class="section__head">
+        <p class="eyebrow">Rentals</p>
+        <h2>Ready-to-ride rentals for road, gravel, and e-commutes.</h2>
+      </div>
+      <div class="grid-3">
+        <article class="card rental">
+          <div class="badge">Popular</div>
+          <h3>Road Endurance</h3>
+          <p>Carbon endurance bikes with 11-speed groupsets, tubeless, and power meters on request.</p>
+          <p class="price">₱65/day</p>
+        </article>
+        <article class="card rental">
+          <h3>Gravel Explorer</h3>
+          <p>Wide 45c tires, bolt-on bag mounts, and GPS mounts for exploring mixed terrain.</p>
+          <p class="price">₱70/day</p>
+        </article>
+        <article class="card rental">
+          <h3>E-Commute</h3>
+          <p>Class 1 pedal assist with 60-mile range, fenders, and integrated lights.</p>
+          <p class="price">₱55/day</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section section--muted">
+      <div class="section__head">
+        <p class="eyebrow">Reviews</p>
+        <h2>Trusted by local riders.</h2>
+      </div>
+      <div class="slider">
+        <button class="slider__control" data-dir="prev">&#8592;</button>
+        <div class="slider__viewport" id="testimonialSlider">
+          <article class="card testimonial active">
+            <p>"Fastest turn-around in town. They diagnosed a creak, fixed it same day, and the bike rides silent."</p>
+            <p class="author">— Priya M.</p>
+          </article>
+          <article class="card testimonial">
+            <p>"Took a gravel rental for the weekend. The bike was dialed, tubeless topped off, and came with spare kit."</p>
+            <p class="author">— Lucas F.</p>
+          </article>
+          <article class="card testimonial">
+            <p>"Bought my first e-bike here. The fit session was included and they explained maintenance clearly."</p>
+            <p class="author">— Dana S.</p>
+          </article>
+        </div>
+        <button class="slider__control" data-dir="next">&#8594;</button>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section__head">
+        <p class="eyebrow">Visit or book</p>
+        <h2>Let us know what you need.</h2>
+        <p class="lede">We respond within one business hour during shop hours (Tue–Sun, 10–7).</p>
+      </div>
+      <div class="contact">
+        <form id="bookingForm" class="form">
+          <div class="form__row">
+            <label>Name<input type="text" name="name" required placeholder="Alex Rider"></label>
+            <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
+          </div>
+          <div class="form__row">
+            <label>Service type
+              <select name="type" required>
+                <option value="">Choose one</option>
+                <option value="sales">Bike purchase consult</option>
+                <option value="service">Service appointment</option>
+                <option value="rental">Rental booking</option>
+                <option value="fit">Bike fit session</option>
+              </select>
+            </label>
+            <label>Preferred date<input type="date" name="date" required></label>
+          </div>
+          <label>Notes
+            <textarea name="notes" rows="4" placeholder="Tell us about your bike, goals, or routes."></textarea>
+          </label>
+          <div class="form__actions">
+            <button type="submit" class="btn primary">Submit request</button>
+            <p class="form__status" id="formStatus">We reply quickly. No spam.</p>
+          </div>
+        </form>
+
+        <div class="contact__info">
+          <div class="info-block">
+            <h3>Shop</h3>
+            <p>245 King Street, Suite 102<br>Seattle, WA 98104</p>
+            <p>Tue–Sun · 10am – 7pm</p>
+          </div>
+          <div class="info-block">
+            <h3>Contact</h3>
+            <p><a href="tel:09197755518">09197755518</a></p>
+            <p><a href="mailto:hello@velocitybikes.com">hello@velocitybikes.com</a></p>
+          </div>
+          <div class="info-block">
+            <h3>Services include</h3>
+            <ul>
+              <li>Lifetime basic tune-ups on bike purchases</li>
+              <li>Wheelbuilding and suspension service</li>
+              <li>Bike fitting with motion capture</li>
+              <li>Custom travel and packing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <div class="logo">Velocity<span>Bikes</span></div>
+      <p>Independent bike shop serving riders since 2008.</p>
+    </div>
+    <div class="footer__links">
+      <a href="#hero" class="scroll-cta" data-target="#hero">Home</a>
+      <a href="#bikes" class="scroll-cta" data-target="#bikes">Bikes</a>
+      <a href="#services" class="scroll-cta" data-target="#services">Services</a>
+      <a href="#rentals" class="scroll-cta" data-target="#rentals">Rentals</a>
+      <a href="#contact" class="scroll-cta" data-target="#contact">Contact</a>
+    </div>
+    <div class="footer__cta">
+      <p>Need help choosing? Book a consult.</p>
+      <button class="btn ghost scroll-cta" data-target="#contact">Book now</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
